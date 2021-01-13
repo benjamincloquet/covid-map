@@ -10,4 +10,10 @@ I decided to do this project to showcase and test out a few features :
 ### Planning
 
 This is a personal organizational list to plan out features.
-- Basic map display with Leaflet and React Leaflet (main branch) ✅✔
+- Display a basic map with Leaflet and React Leaflet (main branch) ✔
+- Set up a call to the COVID-19 API to get country reports ✔
+- Implement a header with app name 
+- Implement a footer with GitHub repo link
+- Design a layout to display each country's basic info and COVID-19 stats when clicked on
+- Implement the layout
+- Pick a hosting solution
