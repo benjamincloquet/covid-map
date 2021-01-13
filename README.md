@@ -7,9 +7,9 @@ I decided to do this project to showcase and test out a few features :
 - Usage of Leaflet and React Leaflet to display an interactive map
 
 References :
-https://rapidapi.com/Gramzivi/api/covid-19-data\
-https://leafletjs.com/\
-https://react-leaflet.js.org/
+https://rapidapi.com/Gramzivi/api/covid-19-data  
+https://leafletjs.com/  
+https://react-leaflet.js.org  
 
 ### Planning
 
