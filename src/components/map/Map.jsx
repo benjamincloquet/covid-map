@@ -14,13 +14,17 @@ const Map = () => {
   return (
     <MapContainer
       className="map-container"
-      center={[51.505, -0.09]}
-      zoom={13}
       whenCreated={setMap}
+      bounds={[
+        [-90, -180],
+        [90, 180]]}
     >
       <LayersControl position="topright">
         <BaseLayer checked name="OpenStreetMap.Mapnik">
-          <TileLayer url="http://{s}.tile.osm.org/{z}/{x}/{y}.png" />
+          <TileLayer
+            url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"
+            noWrap
+          />
         </BaseLayer>
         <Overlay name="Borders">
           <FeatureGroup color="purple">
