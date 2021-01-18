@@ -3,7 +3,8 @@ import {
   MapContainer, TileLayer, LayersControl, FeatureGroup,
 } from 'react-leaflet';
 import ShapeFile from './ShapeFile';
-import zipUrl from '../shp/ne_110m_admin_0_countries.zip';
+import zipUrl from './shp/ne_110m_admin_0_countries.zip';
+import './Map.css';
 
 const { BaseLayer, Overlay } = LayersControl;
 
@@ -12,7 +13,7 @@ const Map = () => {
 
   return (
     <MapContainer
-      style={{ height: '100vh' }}
+      className="map-container"
       center={[51.505, -0.09]}
       zoom={13}
       whenCreated={setMap}
