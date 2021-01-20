@@ -20,7 +20,7 @@ const ShapeFile = ({ map }) => {
   };
 
   const style = {
-    color: '#ff0000',
+    color: '#4acc22',
     weight: 1,
     opacity: 1,
     fillOpacity: 0,

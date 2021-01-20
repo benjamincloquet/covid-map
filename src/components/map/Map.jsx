@@ -7,7 +7,7 @@ import ShapeFile from './ShapeFile';
 import Popup from './Popup';
 import './Map.css';
 
-const { BaseLayer, Overlay } = LayersControl;
+const { BaseLayer } = LayersControl;
 
 const Map = () => {
   const [map, setMap] = useState(null);
@@ -18,21 +18,20 @@ const Map = () => {
         className="map-container"
         whenCreated={setMap}
         bounds={[
-          [-90, -180],
-          [90, 180]]}
+          [-10, -10],
+          [50, 10],
+        ]}
       >
-        <LayersControl position="topright" style={{ zIndex: 1 }}>
+        <LayersControl position="topright">
           <BaseLayer checked name="OpenStreetMap.Mapnik">
             <TileLayer
               url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"
               noWrap
             />
           </BaseLayer>
-          <Overlay name="Borders">
-            <FeatureGroup color="purple">
-              <ShapeFile map={map} />
-            </FeatureGroup>
-          </Overlay>
+          <FeatureGroup>
+            <ShapeFile map={map} />
+          </FeatureGroup>
         </LayersControl>
         <Popup />
       </MapContainer>
