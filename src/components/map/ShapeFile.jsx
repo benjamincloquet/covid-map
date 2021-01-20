@@ -1,42 +1,41 @@
 import { useEffect } from 'react';
 import Leaflet from 'leaflet';
-
 import shp from 'shpjs';
+import zipUrl from './shp/ne_110m_admin_0_countries.zip';
+import { useCountrySelection } from './country-selection-context';
 
-const ShapeFile = ({ map, zipUrl }) => {
-  if (map) {
-    const onEachFeature = (feature, layer) => {
-      fetch(`https://covid19-api.com/country?name=${feature.properties.NAME}&format=json`)
-        .then((res) => res.json())
-        .then((result) => {
-          const popupContent = [`<h1>${feature.properties.ADMIN}</h1>`];
-          if (result[0] === undefined) {
-            popupContent.push('<p>No data for this country.</p>');
-          } else {
-            popupContent.push(`<p>Confirmed cases : ${result[0].confirmed.toLocaleString()}</p>`);
-            popupContent.push(`<p>Deaths : ${result[0].deaths.toLocaleString()}</p>`);
-            popupContent.push(`<p>Recovered : ${result[0].recovered.toLocaleString()}</p>`);
-          }
-          layer.bindPopup(popupContent.join(''));
-        });
-    };
+const ShapeFile = ({ map }) => {
+  const { dispatch } = useCountrySelection();
 
-    const style = {
-      color: '#ff0000',
-      weight: 1,
-      opacity: 1,
-      fillOpacity: 0,
-    };
+  const onEachFeature = (feature, layer) => {
+    layer.on('click', () => {
+      dispatch({
+        type: 'select',
+        payload: {
+          name: feature.properties.NAME,
+          displayName: feature.properties.ADMIN,
+        },
+      });
+    });
+  };
 
-    useEffect(() => {
+  const style = {
+    color: '#ff0000',
+    weight: 1,
+    opacity: 1,
+    fillOpacity: 0,
+  };
+
+  useEffect(() => {
+    if (map) {
       const geoJSONLayerOptions = { onEachFeature, style };
       const geoJSONLayer = Leaflet.geoJSON({ features: [] }, geoJSONLayerOptions);
       geoJSONLayer.addTo(map);
       shp(zipUrl).then((data) => {
         geoJSONLayer.addData(data);
       });
-    }, []);
-  }
+    }
+  }, [map]);
 
   return null;
 };

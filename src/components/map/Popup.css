@@ -1,0 +1,47 @@
+.popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+
+  background-color: white;
+  width: 80%;
+  height: 80%;
+
+  padding: 4rem;
+  border-radius: 1rem;
+}
+
+.popup-hidden {
+  visibility: hidden;
+}
+
+.popup-close-button {
+  position: absolute;
+  right: 3rem;
+  top: 3rem;
+  border: none;
+  background-color: transparent;
+  height: 2rem;
+  width: 2rem;
+  cursor: pointer;
+}
+
+.popup-close-button::before, .popup-close-button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 0.4rem;
+  width: 120%;
+  background-color: #e0e0e0;
+}
+
+.popup-close-button::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.popup-close-button::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
