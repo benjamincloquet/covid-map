@@ -16,10 +16,14 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  opacity: 1;
+  transition: opacity 0.1s linear;
 }
 
 .popup-hidden {
   visibility: hidden;
+  opacity: 0;
 }
 
 .popup-close-button {
@@ -80,4 +84,18 @@
   margin-left: 2rem;
   font-weight: 400;
   font-size: 2rem;
+}
+
+@media screen and (max-width: 1600px) {
+  .popup {
+    width: 75%;
+    height: 75%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .popup {
+    width: 90%;
+    height: 90%;
+  }
 }

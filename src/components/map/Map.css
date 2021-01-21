@@ -6,3 +6,9 @@
 .leaflet-pane {
   z-index: 2;
 }
+
+@media screen and (max-width: 767px) {
+  .map-container {
+    height: 100vh;
+  }
+}
