@@ -21,5 +21,5 @@ This is a personal organizational list to plan out features.
 - Implement a header with app name and GitHub repo link ✔
 - Design a layout to display each country's basic info and COVID-19 stats when clicked on ✔
 - Implement the layout ✔
-- Adapt the global layout to small screens
+- Adapt the global layout to small screens ✔
 - Pick a hosting solution
