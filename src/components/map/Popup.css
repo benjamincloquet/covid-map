@@ -6,11 +6,16 @@
   z-index: 5;
 
   background-color: white;
-  width: 80%;
-  height: 80%;
+  width: 40%;
+  height: 60%;
 
   padding: 4rem;
   border-radius: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .popup-hidden {
@@ -44,4 +49,35 @@
 
 .popup-close-button::after {
   transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.popup-country-card {
+  display: flex;
+  align-items: center;
+}
+
+.popup-country-flag {
+  margin-left: 1rem;
+}
+
+.popup-country-name {
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+.popup-figure-container {
+  display: flex;
+}
+
+.popup-figure-name {
+  text-transform: uppercase;
+  font-size: 2rem;
+  font-weight: 100;
+}
+
+.popup-figure {
+  margin-left: 2rem;
+  font-weight: 400;
+  font-size: 2rem;
 }
