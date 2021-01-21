@@ -19,6 +19,7 @@ This is a personal organizational list to plan out features.
 - Display a basic map with Leaflet and React Leaflet (main branch) ✔
 - Set up a call to the COVID-19 API to get country reports ✔
 - Implement a header with app name and GitHub repo link ✔
-- Design a layout to display each country's basic info and COVID-19 stats when clicked on
-- Implement the layout
+- Design a layout to display each country's basic info and COVID-19 stats when clicked on ✔
+- Implement the layout ✔
+- Adapt the global layout to small screens
 - Pick a hosting solution
